@@ -1,9 +1,16 @@
 package petal
 
+import (
+	"github.com/kevin/petal/market"
+	"github.com/kevin/petal/trader"
+)
+
 type Client struct {
 	AppKey      string
 	AppSecret   string
 	CallbackURL string
+	Trader      trader.Trader
+	Market      market.Market
 }
 
 func NewClient(config *Config) (*Client, error) {
